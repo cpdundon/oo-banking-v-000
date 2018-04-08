@@ -13,6 +13,10 @@ class Transfer
   end
   
   def execute_transaction
+    if @status.upcase == "COMPLETE"
+      return nil
+    end
+    
     
     sender.balance -= @amount
     receiver.balance += @amount
