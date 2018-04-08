@@ -17,7 +17,7 @@ class Transfer
       return nil
     end
     
-    str = "Transaction rejected.  Please check your account balance."
+    str = "Transaction rejected. Please check your account balance."
     
     if !(self.valid?)
       return str
