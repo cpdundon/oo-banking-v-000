@@ -17,6 +17,6 @@ class BankAccount
   end
   
   def valid?
-    ((@status.upcase == "OPEN") && @balance > 0
+    ((@status.upcase == "OPEN") && (@balance > 0))
   end
 end
