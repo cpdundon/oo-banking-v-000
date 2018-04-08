@@ -13,9 +13,7 @@ class Transfer
   end
   
   def execute_transaction
-    if !(@status.upcase == "PENDING")
-      return "Transaction rejected."
-    else valid?
+    if valid?
       return "Transaction rejected.  Please check your account balance."
     end
     
