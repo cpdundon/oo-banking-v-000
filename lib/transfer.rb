@@ -13,9 +13,14 @@ class Transfer
   end
   
   def execute_transaction
+    if @status.upcase != "PENDING"
+      return nil  
+    end
+    
     sender.balance -= @amount
     receiver.balance += @amount
     
     @status = "complete"
+    true
   end
 end
