@@ -39,7 +39,7 @@ class Transfer
   end
   
   def reverse_transfer
-    if @status.upcase == "COMPLETE"
+    if @status.upcase != "COMPLETE"
       return nil
     end
     
