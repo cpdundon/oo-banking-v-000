@@ -17,6 +17,9 @@ class Transfer
       return nil
     end
     
+    if !sender.valid?
+      return "Mombojombo"
+    end
     
     sender.balance -= @amount
     receiver.balance += @amount
