@@ -27,6 +27,7 @@ class Transfer
     e_balance = sender.balance - @amount
     
     if e_balance < 0
+      @status = "rejected"
       return str
     end
     
