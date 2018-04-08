@@ -13,7 +13,7 @@ class Transfer
   end
   
   def execute_transaction
-    if @status.upcase != "COMPLETE in \\"
+    if @status.upcase != "COMPLETE"
       return nil
     end
     
@@ -23,7 +23,12 @@ class Transfer
       return str
     end
     
-    #make sure that the sender has enough $$$
+    #make sure that the sender has enough $$$ in their acct.
+    e_balance = sender.balance - @amount
+    
+    if e_balance < 0
+      return str
+    end
     
     sender.balance -= @amount
     receiver.balance += @amount
