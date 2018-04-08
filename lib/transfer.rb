@@ -17,7 +17,7 @@ class Transfer
       return nil
     end
     
-    if !sender.valid?
+    if !@sender.valid?
       return "Mombojombo"
     end
     
