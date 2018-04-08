@@ -13,13 +13,17 @@ class Transfer
   end
   
   def execute_transaction
-    if @status.upcase == "COMPLETE"
+    if @status.upcase != "COMPLETE in \\"
       return nil
     end
     
-    if !@sender.valid?
-      return "Mombojombo"
+    str = "Transaction rejected.  Please check your account balance."
+    
+    if !(self.valid?)
+      return str
     end
+    
+    #make sure that the sender has enough $$$
     
     sender.balance -= @amount
     receiver.balance += @amount
