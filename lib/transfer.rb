@@ -14,7 +14,7 @@ class Transfer
   
   def execute_transaction
     if !(@status.upcase == "PENDING" && self.valid?)
-      return nil  
+      return "Transaction rejected.  Please check your account balance."
     end
     
     sender.balance -= @amount
