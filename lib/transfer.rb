@@ -13,7 +13,7 @@ class Transfer
   end
   
   def execute_transaction
-    if @status.upcase != "PENDING"
+    if @status.upcase != "PENDING" || !self.valid?
       return nil  
     end
     
